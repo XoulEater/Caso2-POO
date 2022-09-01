@@ -84,7 +84,7 @@ public class YatchMainFrame extends JFrame {
     	this.add(BateriasCarga);
     	
 
-    	JLabel BateriasCapTXT = new JLabel("Capacidad: " + Constants.BATCAPACITY * Constants.BATQUANTITY);
+    	JLabel BateriasCapTXT = new JLabel("Capacidad: " + Constants.BATCAPACITY * Constants.BATQUANTITY + "Kw");
     	BateriasCapTXT.setBounds(10, 90, 160, 15);
     	this.add(BateriasCapTXT);
     	
@@ -105,7 +105,7 @@ public class YatchMainFrame extends JFrame {
     	this.add(PanelesEfiTXT);
     	
     	PanelesEfi = new JLabel();
-    	PanelesEfi.setBounds(80, 160, 160, 15);
+    	PanelesEfi.setBounds(70, 160, 160, 15);
     	this.add(PanelesEfi);
     	
     	JLabel PanelesCPSTXT = new JLabel("Entrada: ");

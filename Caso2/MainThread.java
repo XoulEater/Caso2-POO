@@ -4,34 +4,18 @@ public class MainThread extends Thread {
 	private EnergyCenter energyCenter;
 	private Yatch yatch;
 	private int hour = 0;
-	private int exeTime;
 	
 	public MainThread(EnergyCenter PenergyCenter, Yatch Pyatch) {
 		this.energyCenter = PenergyCenter;
 		this.yatch = Pyatch;
-		this.exeTime = Constants.EXECUTION;
 	}
 	public void setWindow(YatchMainFrame pFrame) {
 		controlledFrame = pFrame;
 	}
 	
-	public float getChargePrs() {
-		float resul = 0;
-		if (energyCenter.gettCharge() != 0 ) {
-			resul = energyCenter.gettCapacity() /energyCenter.gettCharge();
-		}
-		return resul;
-	}
 
 	
-	
 	public void NextHour(){
-		
-		if (hour != 24) {
-			hour++;
-		} else {
-			hour = 1;
-		}
 		
 		float efficiency;
 		if (hour < 6 || hour > 18) {
@@ -66,6 +50,12 @@ public class MainThread extends Thread {
 		controlledFrame.setyateIt(yatch.getSpeedMul());
 		controlledFrame.setyateSpd(speed);
 		controlledFrame.setCountHour(hour);
+		
+		if (hour != 24) {
+			hour++;
+		} else {
+			hour = 1;
+		}
 
 	}
 	

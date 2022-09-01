@@ -11,7 +11,7 @@ public class Yatch {
 		this.speedMul = 0;
 		this.efficiency = 1.0f;
 	}
-	public Yatch() {
+	public Yatch() { 
 		this.xtrIntake = 0.0f;
 		this.speed = 0.0f;
 		this.speedMul = 0;

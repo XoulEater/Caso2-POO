@@ -1,5 +1,6 @@
 import java.util.LinkedList;
 
+
 public class Simulation {
 
 	public static void main(String[] args) {
@@ -22,7 +23,7 @@ public class Simulation {
 		Yatch yate = new Yatch();
 		
 		// Centro de Control Energetico (CCE)
-		EnergyCenter CCE = new EnergyCenter(ListBaterias, ListPaneles, Constants.YATCHINTAKE); 
+		EnergyCenter CCE = new EnergyCenter(ListBaterias, ListPaneles); 
 		
 		CCE.updateCapacity();
 		CCE.updatetChargePS(eficiencia);

@@ -5,16 +5,14 @@ public class EnergyCenter {
 	private float tCharge;
 	private float tChargePS;
 	private float tIntake;
-	private float yatchIntakeBase;
 	private LinkedList<Battery> batteries;
 	private LinkedList<Panel> panels;
 	
 
-	public EnergyCenter(LinkedList<Battery> Pbatteries, LinkedList<Panel> Ppanels, float pyatchIntakeBase) {
+	public EnergyCenter(LinkedList<Battery> Pbatteries, LinkedList<Panel> Ppanels) {
 		
 		this.batteries = Pbatteries;
 		this.panels = Ppanels;
-		this.yatchIntakeBase = pyatchIntakeBase;
 		this.tCapacity = 0.0f;
 		this.tChargePS = 0.0f;
 		this.tCharge = 0.0f;
@@ -46,7 +44,7 @@ public class EnergyCenter {
 	}
 	
 	public void updatetCharge() {
-		this.tCharge += this.tChargePS;
+		this.tCharge += this.tChargePS; 
 		this.tCharge -= this.tIntake;
 		if (this.tCharge > this.tCapacity) {
 			this.tCharge = this.tCapacity;
@@ -58,20 +56,9 @@ public class EnergyCenter {
 	}
 
 	public void updatetIntake(float speedMul, float xIntake) {
-		this.tIntake = this.yatchIntakeBase * speedMul + xIntake;
+		this.tIntake = Constants.YATCHINTAKE * speedMul + xIntake;
 	}
 
-	public float getYatchIntake(float speedMul) {
-		return yatchIntakeBase * speedMul;
-	}
 
-	public LinkedList<Battery> getBatteries() {
-		return batteries;
-	}
-
-	public LinkedList<Panel> getPanels() {
-		return panels;
-	}
-	
 
 }
